@@ -411,32 +411,85 @@ details.media-toggle[open] .media-poster { display: none; }
   padding-bottom: 2px;
 }
 
-/* ─── Band callout ─── */
+/* ─── Band callout — Pinhas & Sons + carousel ─── */
 .band-callout {
   background: var(--bg-deep);
   color: var(--ink);
-  padding: 7rem 2rem;
+  padding: 6rem 2rem 7rem;
   text-align: center;
   position: relative;
+  border-bottom: 1px solid var(--rule);
 }
 .band-callout::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(245,178,58,0.08) 0%, rgba(7,8,26,0) 60%);
+  background: radial-gradient(ellipse at 50% 25%, rgba(245,178,58,0.1) 0%, rgba(7,8,26,0) 65%);
   pointer-events: none;
 }
-.band-callout > * { position: relative; }
-.band-callout .section-title { color: var(--ink); margin-bottom: 1.5rem; }
+.band-callout .section-inner { position: relative; max-width: 64rem; }
+.band-callout .section-title { color: var(--ink); margin-bottom: 1rem; }
 .band-callout .section-kicker { color: var(--saffron); }
-.band-callout p {
+.band-callout .band-lead {
   max-width: 42rem;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 3rem;
   font-size: 1.15rem;
   font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
   font-style: italic;
   color: var(--ink-soft);
 }
+
+/* Video carousel */
+.video-carousel { margin: 0 auto 3rem; max-width: 60rem; }
+.video-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--saffron);
+  box-shadow: 0 24px 80px rgba(245,178,58,0.08);
+  overflow: hidden;
+}
+.video-player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.video-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-deep) center/cover no-repeat;
+  border: 1px solid var(--rule);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.video-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(7,8,26,0.45);
+  transition: background .2s ease;
+}
+.video-thumb:hover { border-color: var(--saffron); transform: translateY(-2px); }
+.video-thumb:hover::after { background: rgba(7,8,26,0.15); }
+.video-thumb.is-active {
+  border-color: var(--saffron);
+  box-shadow: 0 0 0 1px var(--saffron);
+}
+.video-thumb.is-active::after { background: transparent; }
+@media (max-width: 720px) {
+  .video-thumbs { grid-template-columns: repeat(2, 1fr); }
+}
+
 .band-cta {
   display: inline-block;
   padding: 1rem 2.2rem;
