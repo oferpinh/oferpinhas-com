@@ -390,6 +390,29 @@ details.media-toggle[open] .media-poster { display: none; }
   max-width: 50rem;
   line-height: 1.55;
 }
+.work-row-media { margin-top: 0.85rem; }
+.work-row-media summary {
+  display: inline-block;
+  list-style: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  border-bottom: 1px solid var(--saffron);
+  padding-bottom: 2px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.work-row-media summary::-webkit-details-marker { display: none; }
+.work-row-media summary:hover { color: var(--ink); border-color: var(--ink); }
+.work-row-media[open] summary { display: none; }
+.work-row-media[open] .media-frame {
+  margin-top: 1rem;
+  max-width: 50rem;
+  border: 1px solid var(--saffron);
+}
 .work-row.reveal {
   opacity: 0;
   transform: translateY(14px);
