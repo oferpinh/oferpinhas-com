@@ -9,8 +9,8 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // Stagger-reveal for work cards. Syncopated swing, not uniform.
-  const cards = document.querySelectorAll('.work-card');
+  // Stagger-reveal for work rows. Syncopated swing, not uniform.
+  const cards = document.querySelectorAll('.work-row');
   if (cards.length && 'IntersectionObserver' in window) {
     const swing = [0, 80, 220, 140, 320, 200, 420, 300, 540, 380];
     cards.forEach((card, i) => {
