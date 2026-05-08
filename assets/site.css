@@ -431,7 +431,7 @@ details.media-toggle[open] .media-poster { display: none; }
 .band-callout {
   background: var(--bg-deep);
   color: var(--ink);
-  padding: 6rem 2rem 7rem;
+  padding: 5rem 2rem 6rem;
   text-align: center;
   position: relative;
   border-bottom: 1px solid var(--rule);
@@ -443,20 +443,10 @@ details.media-toggle[open] .media-poster { display: none; }
   background: radial-gradient(ellipse at 50% 25%, rgba(245,178,58,0.1) 0%, rgba(7,8,26,0) 65%);
   pointer-events: none;
 }
-.band-callout .section-inner { position: relative; max-width: 64rem; }
-.band-callout .section-title { color: var(--ink); margin-bottom: 1rem; }
-.band-callout .section-kicker { color: var(--saffron); }
-.band-callout .band-lead {
-  max-width: 42rem;
-  margin: 0 auto 3rem;
-  font-size: 1.15rem;
-  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
-  font-style: italic;
-  color: var(--ink-soft);
-}
+.band-callout .section-inner { position: relative; max-width: 80rem; }
 
 /* Video carousel */
-.video-carousel { margin: 0 auto 3rem; max-width: 60rem; }
+.video-carousel { margin: 0 auto 2.5rem; max-width: 76rem; }
 .video-stage {
   position: relative;
   width: 100%;
