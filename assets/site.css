@@ -105,6 +105,13 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.6rem;
   letter-spacing: 0.04em;
   color: inherit;
+  display: inline-flex;
+  align-items: center;
+}
+.brand-logo {
+  height: 2.2rem;
+  width: auto;
+  display: block;
 }
 .lang-toggle {
   font-family: 'Inter', sans-serif;
@@ -160,6 +167,13 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
   text-shadow: 0 2px 30px rgba(0,0,0,0.35);
+}
+.hero-logo { padding: 0; margin-bottom: 1.25rem; }
+.hero-logo img {
+  display: block;
+  width: clamp(16rem, 38vw, 30rem);
+  height: auto;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.4));
 }
 .hero-tagline {
   font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
