@@ -345,87 +345,6 @@ details.media-toggle[open] .media-poster { display: none; }
 .section-body { font-size: 1.1rem; max-width: 42rem; }
 .section-body p { margin-bottom: 1rem; }
 
-/* ─── Works list (text rows under featured) ─── */
-.works-list {
-  list-style: none;
-  margin: 4rem 0 0;
-  padding: 0;
-  border-top: 1px solid var(--rule);
-}
-.work-row {
-  display: grid;
-  grid-template-columns: 6rem 1fr;
-  gap: 1.5rem;
-  align-items: baseline;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid var(--rule);
-  transition: background .2s ease;
-}
-.work-row:hover { background: var(--bg-soft); }
-.work-row-year {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.25em;
-  color: var(--saffron);
-}
-.work-row-title {
-  font-family: 'Karantina', serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  color: var(--ink);
-  letter-spacing: -0.005em;
-}
-:lang(en) .work-row-title {
-  font-family: 'Cormorant Garamond', 'EB Garamond', serif;
-  font-style: italic;
-  font-weight: 500;
-}
-.work-row-note {
-  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
-  font-size: 1rem;
-  color: var(--ink-soft);
-  max-width: 50rem;
-  line-height: 1.55;
-}
-.work-row-media { margin-top: 0.85rem; }
-.work-row-media summary {
-  display: inline-block;
-  list-style: none;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--saffron);
-  border-bottom: 1px solid var(--saffron);
-  padding-bottom: 2px;
-  transition: color .2s ease, border-color .2s ease;
-}
-.work-row-media summary::-webkit-details-marker { display: none; }
-.work-row-media summary:hover { color: var(--ink); border-color: var(--ink); }
-.work-row-media[open] summary { display: none; }
-.work-row-media[open] .media-frame {
-  margin-top: 1rem;
-  max-width: 50rem;
-  border: 1px solid var(--saffron);
-}
-.work-row.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity .55s ease-out var(--reveal-delay, 0ms),
-              transform .55s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms);
-}
-.work-row.reveal.revealed { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) {
-  .work-row.reveal { opacity: 1; transform: none; transition: none; }
-}
-@media (max-width: 600px) {
-  .work-row { grid-template-columns: 1fr; gap: 0.4rem; }
-}
 
 /* ─── Band callout — Pinhas & Sons + carousel ─── */
 .band-callout {
@@ -512,12 +431,7 @@ details.media-toggle[open] .media-poster { display: none; }
 .band-cta:hover { background: var(--saffron); color: var(--bg-deep); }
 
 /* ─── Contact ─── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 2rem;
-}
+#contact .section-inner { text-align: center; }
 .contact-block-title {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
@@ -525,32 +439,36 @@ details.media-toggle[open] .media-poster { display: none; }
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--saffron);
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
 }
-.contact-lead {
-  font-size: 1rem;
-  color: var(--ink-soft);
-  margin-bottom: 1rem;
-  max-width: 28rem;
-}
-@media (max-width: 720px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-}
-.contact-links {
+.contact-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  justify-content: center;
+  gap: 1.5rem;
 }
-.contact-link {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
   color: var(--ink);
-  border-bottom: 1px solid var(--ink-soft);
-  padding-bottom: 2px;
-  transition: color .2s ease, border-color .2s ease;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease;
 }
-.contact-link:hover { color: var(--saffron); border-color: var(--saffron); }
+.contact-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
+}
+.contact-icon:hover {
+  color: var(--bg-deep);
+  background: var(--saffron);
+  border-color: var(--saffron);
+  transform: translateY(-2px);
+}
 
 /* ─── Footer ─── */
 .site-footer {
