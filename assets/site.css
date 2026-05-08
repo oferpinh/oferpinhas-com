@@ -125,82 +125,18 @@ a { color: inherit; text-decoration: none; }
 }
 .lang-toggle:hover { background: var(--saffron); color: var(--bg-deep); border-color: var(--saffron); }
 
-/* ─── Hero — cinematic spotlight ─── */
+/* ─── Hero — full-bleed logo image ─── */
 .hero {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  align-items: flex-end;
-  background: var(--bg-deep) url('/assets/photos/hero.jpg') center/cover no-repeat;
-  color: var(--ink);
-  padding: 0;
+  background: var(--bg-deep) url('/assets/photos/hero-logo.jpg') center/contain no-repeat;
   overflow: hidden;
 }
-.hero::before {
-  /* spotlight vignette — radial pulled from upper-center */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 30%, rgba(14,16,36,0) 0%, rgba(14,16,36,0.55) 70%, rgba(7,8,26,0.95) 100%);
-  pointer-events: none;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(7,8,26,0.2) 0%, rgba(7,8,26,0) 30%, rgba(7,8,26,0.85) 100%);
-  pointer-events: none;
-}
-.hero-text {
-  position: relative;
-  z-index: 2;
-  padding: 0 4rem 5rem;
-  max-width: 60rem;
-}
-.hero-photo { display: none; }
-.hero-name {
-  font-family: 'Karantina', serif;
-  font-weight: 700;
-  font-size: clamp(3.5rem, 13vw, 10rem);
-  line-height: 0.88;
-  color: var(--ink);
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
-  text-shadow: 0 2px 30px rgba(0,0,0,0.35);
-}
-.hero-logo { padding: 0; margin-bottom: 1.25rem; }
-.hero-logo img {
-  display: block;
-  width: clamp(16rem, 38vw, 30rem);
-  height: auto;
-  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.4));
-}
-.hero-tagline {
-  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
-  font-style: italic;
-  font-size: clamp(1.1rem, 2.2vw, 1.55rem);
-  color: var(--saffron);
-  max-width: 42rem;
-  margin: 0;
-  letter-spacing: 0.02em;
-}
-.hero-tagline::before {
-  content: "";
-  display: inline-block;
-  width: 3rem;
-  height: 1px;
-  background: var(--saffron);
-  vertical-align: middle;
-  margin-inline-end: 1rem;
-  opacity: 0.7;
-}
-.hero-scroll { display: none; }
 @media (max-width: 720px) {
   .hero {
-    background-image: url('/assets/photos/hero-mobile.jpg');
-    min-height: 88vh;
+    background-image: url('/assets/photos/hero-logo-mobile.jpg');
+    min-height: 75vh;
   }
-  .hero-text { padding: 0 1.5rem 3rem; }
 }
 
 /* ─── Sections — dark cinema ─── */
