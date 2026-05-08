@@ -125,23 +125,39 @@ a { color: inherit; text-decoration: none; }
 }
 .lang-toggle:hover { background: var(--saffron); color: var(--bg-deep); border-color: var(--saffron); }
 
-/* ─── Hero — full-bleed logo image ─── */
+/* ─── Hero — full-bleed logo image + subtitle ─── */
 .hero {
   position: relative;
   min-height: 100vh;
-  background: var(--bg-deep) url('/assets/photos/hero-logo.jpg') center/contain no-repeat;
+  background: var(--bg-deep) url('/assets/photos/hero-logo.jpg') center 40%/contain no-repeat;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 4rem;
+}
+.hero-subtitle {
+  text-align: center;
+  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  color: var(--saffron);
+  letter-spacing: 0.04em;
+  margin: 0;
+  padding: 0 1.5rem;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.6);
 }
 @media (max-width: 720px) {
   .hero {
     background-image: url('/assets/photos/hero-logo-mobile.jpg');
     min-height: 75vh;
+    padding-bottom: 2.5rem;
   }
 }
 
 /* ─── Sections — dark cinema ─── */
 section { padding: 7rem 2rem; }
-#featured { padding: 7rem 2rem 6rem; background: var(--bg); }
+#featured { padding: 0 2rem 6rem; background: var(--bg); }
 #works {
   background: var(--bg-soft);
   padding-top: 5rem;
@@ -175,6 +191,16 @@ section { padding: 7rem 2rem; }
   flex-direction: column;
   position: relative;
 }
+.media-toggle:not([open]) ~ .feature-meta {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 3;
+  padding: 1.25rem 1.4rem;
+  background: linear-gradient(180deg, rgba(7,8,26,0) 0%, rgba(7,8,26,0.55) 35%, rgba(7,8,26,0.95) 100%);
+  pointer-events: none;
+}
+.media-toggle:not([open]) ~ .feature-meta .feature-title { color: var(--ink); }
+.media-toggle:not([open]) ~ .feature-meta .feature-note { color: var(--ink-soft); }
 .media-toggle { width: 100%; }
 .media-poster {
   display: block;
@@ -195,14 +221,14 @@ section { padding: 7rem 2rem; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7,8,26,0.0) 40%, rgba(7,8,26,0.55) 100%);
+  background: linear-gradient(180deg, rgba(7,8,26,0.15) 0%, rgba(7,8,26,0.0) 30%, rgba(7,8,26,0.0) 50%, rgba(7,8,26,0.85) 100%);
   transition: background .3s ease;
 }
 .media-poster:hover {
   border-color: var(--saffron);
   box-shadow: 0 0 0 1px var(--saffron), 0 24px 60px rgba(245,178,58,0.15);
 }
-.media-poster:hover::before { background: linear-gradient(180deg, rgba(7,8,26,0.0) 30%, rgba(7,8,26,0.4) 100%); }
+.media-poster:hover::before { background: linear-gradient(180deg, rgba(7,8,26,0.05) 0%, rgba(7,8,26,0) 30%, rgba(7,8,26,0) 50%, rgba(7,8,26,0.7) 100%); }
 .play-cue {
   position: absolute;
   top: 50%; left: 50%;
@@ -241,33 +267,37 @@ section { padding: 7rem 2rem; }
   border: 0;
 }
 details.media-toggle[open] .media-poster { display: none; }
-.feature-meta { padding: 1.5rem 0.25rem 0; }
+.feature-meta {
+  padding: 1.25rem 1.4rem 1.4rem;
+}
 .feature-tag {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--saffron);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 .feature-title {
   font-family: 'Karantina', serif;
   font-weight: 700;
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   line-height: 0.95;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
   color: var(--ink);
   letter-spacing: -0.005em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
-.feature-large .feature-title { font-size: clamp(2.5rem, 5.5vw, 4.5rem); }
+.feature-large .feature-title { font-size: clamp(2rem, 4.5vw, 3.6rem); }
 :lang(en) .feature-title { font-family: 'Cormorant Garamond', 'EB Garamond', serif; font-style: italic; font-weight: 500; }
 .feature-note {
   font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
-  font-size: 1.1rem;
+  font-size: 0.98rem;
   color: var(--ink-soft);
   max-width: 36rem;
-  line-height: 1.55;
+  line-height: 1.5;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 @media (max-width: 720px) {
   .featured-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -298,12 +328,11 @@ details.media-toggle[open] .media-poster { display: none; }
 
 /* ─── Band callout — Pinhas & Sons + carousel ─── */
 .band-callout {
-  background: var(--bg-deep);
+  background: var(--bg);
   color: var(--ink);
-  padding: 5rem 2rem 6rem;
+  padding: 5rem 2rem 4rem;
   text-align: center;
   position: relative;
-  border-bottom: 1px solid var(--rule);
 }
 .band-callout::before {
   content: "";
