@@ -53,6 +53,38 @@ a { color: inherit; text-decoration: none; }
   border: 0;
 }
 
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  inset-inline-start: 1rem;
+  z-index: 1001;
+  background: var(--saffron);
+  color: var(--bg-deep);
+  padding: 0.6rem 1.1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 1rem; outline: 2px solid var(--bg-deep); outline-offset: 2px; }
+
+/* Focus rings — keyboard nav */
+.feature-card:focus-visible,
+.album-tile:focus-visible,
+.contact-icon:focus-visible,
+.show-cta:focus-visible,
+.section-cta:focus-visible,
+.songbook-card:focus-visible,
+.lang-toggle:focus-visible,
+.site-nav a:focus-visible,
+.lightbox-close:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 4px;
+}
+
 .karantina { font-family: 'Karantina', serif; font-weight: 700; }
 .bellefair { font-family: 'Bellefair', serif; }
 .italic-en { font-family: 'Cormorant Garamond', serif; font-style: italic; }
