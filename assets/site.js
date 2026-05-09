@@ -9,6 +9,23 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      siteNav.classList.toggle('is-open', !open);
+    });
+    siteNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        siteNav.classList.remove('is-open');
+      });
+    });
+  }
+
   // Lightbox player
   const box = document.getElementById('lightbox');
   const iframe = document.getElementById('lightbox-iframe');

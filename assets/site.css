@@ -125,6 +125,75 @@ a { color: inherit; text-decoration: none; }
 }
 .lang-toggle:hover { background: var(--saffron); color: var(--bg-deep); border-color: var(--saffron); }
 
+/* ─── Site nav ─── */
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-inline-start: auto;
+  margin-inline-end: 1rem;
+}
+.site-nav a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: inherit;
+  opacity: 0.85;
+  transition: color .2s ease, opacity .2s ease;
+}
+.site-nav a:hover { color: var(--saffron); opacity: 1; }
+.nav-toggle {
+  display: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-inline-start: auto;
+  margin-inline-end: 0.75rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+@media (max-width: 880px) {
+  .site-nav {
+    position: fixed;
+    inset: 4rem 0 auto 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 1.5rem 2rem;
+    background: rgba(14,16,36,0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    margin: 0;
+    transform: translateY(-110%);
+    transition: transform .3s ease;
+    visibility: hidden;
+  }
+  .site-nav.is-open { transform: translateY(0); visibility: visible; }
+  .site-nav a {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: var(--ink);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
+  .site-nav a:last-child { border-bottom: none; }
+  .nav-toggle { display: flex; }
+}
+
 /* ─── Hero — full-bleed logo image + subtitle ─── */
 .hero {
   position: relative;
@@ -554,9 +623,13 @@ body.lightbox-open { overflow: hidden; }
 /* ─── Albums + Songbook ─── */
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem 1.25rem;
   margin-top: 2.5rem;
+}
+.album-grid-second { margin-top: 2rem; }
+@media (max-width: 720px) {
+  .album-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .album-tile {
   display: block;
