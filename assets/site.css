@@ -369,12 +369,21 @@ section { padding: 7rem 2rem; }
 .feature-card.span-large .feature-title { font-size: clamp(1.8rem, 3.5vw, 3rem); }
 :lang(en) .feature-card .feature-title { font-family: 'Cormorant Garamond', 'EB Garamond', serif; font-style: italic; font-weight: 500; }
 .feature-card .feature-note {
-  font-family: 'Frank Ruhl Libre', 'EB Garamond', Georgia, serif;
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.45;
+  font-family: 'Karantina', 'Frank Ruhl Libre', serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.25;
   text-shadow: 0 1px 8px rgba(0,0,0,0.55);
   max-width: 36rem;
+}
+:lang(en) .feature-card .feature-note {
+  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  line-height: 1.45;
 }
 .media-toggle { width: 100%; }
 .play-cue {
@@ -487,11 +496,20 @@ body.lightbox-open { overflow: hidden; }
 }
 :lang(en) .songbook-title { font-family: 'Cormorant Garamond', 'EB Garamond', serif; font-style: italic; font-weight: 500; }
 .songbook-note {
-  font-family: 'Frank Ruhl Libre', 'EB Garamond', Georgia, serif;
-  font-size: 1.05rem;
+  font-family: 'Karantina', 'Frank Ruhl Libre', serif;
+  font-weight: 300;
+  font-size: 1.4rem;
   color: var(--ink-soft);
   margin: 0 0 1.5rem;
   max-width: 32rem;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+:lang(en) .songbook-note {
+  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0;
   line-height: 1.55;
 }
 .songbook-cta {
@@ -534,7 +552,8 @@ body.lightbox-open { overflow: hidden; }
 .feature-large .feature-title { font-size: clamp(2rem, 4.5vw, 3.6rem); }
 :lang(en) .feature-title { font-family: 'Cormorant Garamond', 'EB Garamond', serif; font-style: italic; font-weight: 500; }
 .feature-note {
-  font-family: 'Frank Ruhl Libre', 'EB Garamond', Georgia, serif;
+  font-family: 'Karantina', 'Frank Ruhl Libre', serif;
+  font-weight: 300;
   font-size: 0.98rem;
   color: var(--ink-soft);
   max-width: 36rem;
@@ -618,11 +637,20 @@ body.lightbox-open { overflow: hidden; }
 }
 :lang(en) .show-title { font-family: 'Cormorant Garamond', 'EB Garamond', serif; font-style: italic; font-weight: 500; }
 .show-venue {
-  font-family: 'Frank Ruhl Libre', 'EB Garamond', Georgia, serif;
+  font-family: 'Karantina', 'Frank Ruhl Libre', serif;
+  font-weight: 300;
   color: var(--ink-soft);
   margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+:lang(en) .show-venue {
+  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
+  font-weight: 400;
   font-size: 0.98rem;
   line-height: 1.45;
+  letter-spacing: 0;
 }
 .show-cta {
   font-family: 'Inter', sans-serif;
