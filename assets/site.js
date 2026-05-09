@@ -26,6 +26,27 @@
     });
   }
 
+  // Scroll-triggered reveals
+  if ('IntersectionObserver' in window) {
+    const targets = document.querySelectorAll(
+      '.section-header, .feature-card, .album-tile, .songbook-card, .show-item, .contact-icons'
+    );
+    const swing = [0, 60, 140, 90, 200, 120, 260, 170];
+    targets.forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (swing[i % swing.length]) + 'ms';
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+    targets.forEach(el => obs.observe(el));
+  }
+
   // Lightbox player
   const box = document.getElementById('lightbox');
   const iframe = document.getElementById('lightbox-iframe');
