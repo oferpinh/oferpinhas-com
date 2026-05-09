@@ -184,3 +184,41 @@ Strict phase sequence otherwise. Work task-by-task, mark done, move on.
 - `docs/tasks.md` — original launch-blocker list (this doc supersedes it)
 - `docs/expansion-plan.md` — content/design deep-dive (this doc integrates it)
 - Band repo `docs/wix-cutover.md` — external DNS dependency for T5.6
+
+---
+
+## Status snapshot — 2026-05-09
+
+Site lived through major redesign mid-build. Plan above is the original arc; reality:
+
+**Direction**: design A "Cinema / Spotlight" chosen over editorial B + bold-graphic C (siblings preserved as `design-b`, `design-c` branches). Midnight indigo + cream + saffron + teal. Three branches retained for revert safety.
+
+**Current page structure** (one-page, no detail pages yet):
+1. Hero — full-bleed PINHAS_with_photo composite + cream tagline + teal/saffron subtitle
+2. Upcoming — single show item, P&S × Guy Mintus, TA Museum 2026-07-08
+3. Pinhas & Sons — title + filled-saffron CTA "לאתר ההרכב" → opens new tab; 5 video cards (last spans full row)
+4. Other Projects ("פרויקטים נוספים" / "Beyond the Band") — 9 video cards in collage grid (mi-bead, main-thing-lyrics, hope-dies-last, visa-germany, yemeni-avant-garde, simple-songs, fugue, chorole, enlightened-octopus, orphaned-land)
+5. Albums — 4 studio + 4 live (visual row split, no labels)
+6. Songbook — single magazine-style card with bandcamp cover image
+7. Contact — circular icon row (Email / Instagram / Facebook / YouTube / Bandcamp / Spotify)
+
+**Lightbox player** — single fixed iframe, click any video card opens fullscreen modal.
+
+**Phase status (real)**:
+- Phase 0 — ✅ done (D1–D8)
+- Phase 1 — ✅ done
+- Phase 2 — ✅ done (paper-grain dropped; replaced by midnight-cinema palette)
+- Phase 3 — partial. T3.3 category filter dropped (works grid restructured). T3.1/T3.2 detail pages **deferred** — single-page model works for current scope. Can revisit if individual work URLs become needed for orchestra applications.
+- Phase 4 — formal-kit deferred. T4.5 og:image done (logo on midnight). T4.1/T4.2/T4.3/T4.4 still pending — need user to provide PDFs/press material.
+- Phase 5 — mostly done. T5.5 (GitHub→Vercel auto-deploy) + T5.6 (domain attach) need dashboard action by user. T5.3 Lighthouse not run (requires Chrome headless).
+
+**Review patches applied 2026-05-09** (see `git log` for individual commits):
+- D-1..D-7 design fixes (hero h1, P&S grid, focus rings, accent variety)
+- C-1, C-6, C-9 content + microcopy
+- S-1..S-8 SEO/a11y/perf (og:image, robots, sitemap, hreflang, JSON-LD enrich, logo resize, skip link, CSS audit)
+- User polish: drop years from feature-tags; stronger card overlay gradient; section-cta filled-button + new-tab; favicon swapped to OP_Feather
+- Site nav menu added (6-link bar, mobile hamburger).
+
+**Branches**: `main` is canonical. `design-a/b/c` preserved for design comparisons.
+
+**Pre-launch waiting on user**: T4.x formal-kit PDFs, T5.5 Vercel auto-deploy auth, T5.6 domain cutover after Wix transition.
