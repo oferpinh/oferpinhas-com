@@ -211,59 +211,81 @@ section { padding: 7rem 2rem; }
 .feature-card {
   position: relative;
   grid-column: span 3;
-}
-.feature-card.span-wide { grid-column: span 4; }
-.feature-card.span-tall { grid-column: span 3; grid-row: span 2; }
-.feature-card.span-large { grid-column: span 6; }
-@media (max-width: 900px) {
-  .featured-grid { grid-template-columns: repeat(2, 1fr); }
-  .feature-card,
-  .feature-card.span-wide,
-  .feature-card.span-tall { grid-column: span 1; grid-row: auto; }
-  .feature-card.span-large { grid-column: span 2; }
-}
-.media-toggle:not([open]) ~ .feature-meta {
-  position: absolute;
-  inset: auto 0 0 0;
-  z-index: 3;
-  padding: 1rem 1.2rem;
-  background: linear-gradient(180deg, rgba(7,8,26,0) 0%, rgba(7,8,26,0.55) 35%, rgba(7,8,26,0.95) 100%);
-  pointer-events: none;
-}
-.media-toggle:not([open]) ~ .feature-meta .feature-title { color: var(--ink); }
-.media-toggle:not([open]) ~ .feature-meta .feature-note { color: var(--ink-soft); }
-.media-toggle { width: 100%; }
-.media-poster {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 16rem;
   aspect-ratio: 16 / 9;
   background: var(--bg-deep) center/cover no-repeat;
-  cursor: pointer;
-  list-style: none;
-  outline: none;
-  overflow: hidden;
   border: 1px solid var(--rule);
-  transition: border-color .3s ease, box-shadow .3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: start;
+  outline: none;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
-.feature-card.span-tall .media-poster { aspect-ratio: 9 / 16; min-height: 100%; }
-.feature-card.span-large .media-poster { aspect-ratio: 21 / 9; }
-.feature-card.span-wide .media-poster { aspect-ratio: 16 / 9; }
-.media-poster::-webkit-details-marker { display: none; }
-.media-poster::before {
+.feature-card.span-wide { grid-column: span 4; }
+.feature-card.span-large { grid-column: span 6; }
+.feature-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7,8,26,0.15) 0%, rgba(7,8,26,0.0) 30%, rgba(7,8,26,0.0) 50%, rgba(7,8,26,0.85) 100%);
+  background: linear-gradient(180deg, rgba(7,8,26,0.1) 0%, rgba(7,8,26,0) 35%, rgba(7,8,26,0) 50%, rgba(7,8,26,0.85) 100%);
+  pointer-events: none;
   transition: background .3s ease;
 }
-.media-poster:hover {
+.feature-card:hover {
   border-color: var(--saffron);
   box-shadow: 0 0 0 1px var(--saffron), 0 24px 60px rgba(245,178,58,0.15);
+  transform: translateY(-2px);
 }
-.media-poster:hover::before { background: linear-gradient(180deg, rgba(7,8,26,0.05) 0%, rgba(7,8,26,0) 30%, rgba(7,8,26,0) 50%, rgba(7,8,26,0.7) 100%); }
+@media (max-width: 900px) {
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-card,
+  .feature-card.span-wide { grid-column: span 1; }
+  .feature-card.span-large { grid-column: span 2; }
+}
+.feature-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  padding: 1rem 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+.feature-card .feature-tag {
+  display: inline-block;
+  width: max-content;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.4rem;
+}
+.feature-card .feature-title {
+  font-family: 'Karantina', serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  line-height: 0.95;
+  color: #fff;
+  letter-spacing: -0.005em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+  margin-bottom: 0.3rem;
+}
+.feature-card.span-wide .feature-title,
+.feature-card.span-large .feature-title { font-size: clamp(1.8rem, 3.5vw, 3rem); }
+:lang(en) .feature-card .feature-title { font-family: 'Cormorant Garamond', 'EB Garamond', serif; font-style: italic; font-weight: 500; }
+.feature-card .feature-note {
+  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.45;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+  max-width: 36rem;
+}
+.media-toggle { width: 100%; }
 .play-cue {
   position: absolute;
   top: 50%; left: 50%;
@@ -281,27 +303,121 @@ section { padding: 7rem 2rem; }
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: transform .25s cubic-bezier(.2,.8,.2,1), background .25s ease;
+  z-index: 2;
 }
-.media-poster:hover .play-cue {
+.feature-card:hover .play-cue {
   transform: translate(-50%, -50%) scale(1.1);
   background: var(--saffron);
   color: var(--bg-deep);
 }
-.media-frame {
+
+/* ─── Lightbox player ─── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(7,8,26,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  animation: lightbox-fade .25s ease-out;
+}
+.lightbox[hidden] { display: none; }
+@keyframes lightbox-fade { from { opacity: 0; } to { opacity: 1; } }
+.lightbox-frame {
   position: relative;
   width: 100%;
+  max-width: 1200px;
   aspect-ratio: 16 / 9;
-  background: var(--bg-deep);
+  background: #000;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
   border: 1px solid var(--saffron);
 }
-.media-frame iframe {
+.lightbox-frame iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
 }
-details.media-toggle[open] .media-poster { display: none; }
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  inset-inline-end: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--saffron);
+  background: rgba(14,16,36,0.6);
+  color: var(--saffron);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.lightbox-close:hover { background: var(--saffron); color: var(--bg-deep); transform: scale(1.05); }
+body.lightbox-open { overflow: hidden; }
+
+/* ─── Songbook card ─── */
+.songbook-card {
+  display: grid;
+  grid-template-columns: minmax(14rem, 24rem) 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 2.5rem;
+  transition: transform .25s ease;
+}
+.songbook-card:hover { transform: translateY(-3px); }
+.songbook-image {
+  aspect-ratio: 3 / 4;
+  background: var(--bg-deep) center/cover no-repeat;
+  border: 1px solid var(--rule);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.4);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.songbook-card:hover .songbook-image {
+  border-color: var(--saffron);
+  box-shadow: 0 24px 60px rgba(245,178,58,0.2);
+}
+.songbook-title {
+  font-family: 'Karantina', serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1;
+  margin: 0 0 1rem;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+:lang(en) .songbook-title { font-family: 'Cormorant Garamond', 'EB Garamond', serif; font-style: italic; font-weight: 500; }
+.songbook-note {
+  font-family: 'EB Garamond', 'Frank Ruhl Libre', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+  max-width: 32rem;
+  line-height: 1.55;
+}
+.songbook-cta {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  border-bottom: 1px solid var(--saffron);
+  padding-bottom: 3px;
+}
+@media (max-width: 720px) {
+  .songbook-card { grid-template-columns: 1fr; gap: 1.5rem; }
+  .songbook-image { max-width: 18rem; aspect-ratio: 3 / 4; }
+}
 .feature-meta {
   padding: 1.25rem 1.4rem 1.4rem;
 }
