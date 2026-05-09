@@ -9,9 +9,15 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="description" content="עופר פנחס — מלחין, מעבד, מנהל מוזיקלי. פנחס ובניו, פרויקטים, יצירות והקלטות.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="עופר פנחס">
+<meta property="og:title" content="עופר פנחס · מלחין, מעבד ומנהל מוזיקלי">
 <meta property="og:description" content="מלחין, מעבד, מנהל מוזיקלי. פנחס ובניו ופרויקטים נוספים.">
 <meta property="og:locale" content="he_IL">
+<meta property="og:image" content="https://oferpinhas.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://oferpinhas.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://oferpinhas.com/assets/og.jpg">
 <link rel="alternate" hreflang="he-IL" href="https://oferpinhas.com/">
 <link rel="alternate" hreflang="en" href="https://oferpinhas.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://oferpinhas.com/">
@@ -23,18 +29,57 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "עופר פנחס",
-  "alternateName": "Ofer Pinhas",
-  "url": "https://oferpinhas.com/",
-  "jobTitle": "מלחין, מעבד, מנהל מוזיקלי",
-  "sameAs": [
-    "https://pinhasons.com/",
-    "https://open.spotify.com/artist/4is8ZJ8ZOKavbLhc9M5EPt",
-    "https://oferpinhas.bandcamp.com/",
-    "https://www.youtube.com/@oferpinhas",
-    "https://www.instagram.com/ofer_the_pinhas/",
-    "https://www.facebook.com/ofer.pinhas"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://oferpinhas.com/#person",
+      "name": "עופר פנחס",
+      "alternateName": "Ofer Pinhas",
+      "url": "https://oferpinhas.com/",
+      "image": "https://oferpinhas.com/assets/og.jpg",
+      "jobTitle": "מלחין, מעבד, מנהל מוזיקלי",
+      "sameAs": [
+        "https://pinhasons.com/",
+        "https://open.spotify.com/artist/4is8ZJ8ZOKavbLhc9M5EPt",
+        "https://oferpinhas.bandcamp.com/",
+        "https://www.youtube.com/@oferpinhas",
+        "https://www.instagram.com/ofer_the_pinhas/",
+        "https://www.facebook.com/ofer.pinhas"
+      ]
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "ראש בראש — פנחס ובניו עם גיא מינטוס",
+      "startDate": "2026-07-08T20:00:00+03:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "מוזיאון תל אביב לאמנות — אודיטוריום רקנאטי",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "שאול המלך 27",
+          "addressLocality": "תל אביב",
+          "addressCountry": "IL"
+        }
+      },
+      "performer": [
+        {"@type": "MusicGroup", "name": "פנחס ובניו"},
+        {"@type": "Person", "name": "גיא מינטוס"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://tickets.tamuseum.org.il/%D7%A4%D7%A0%D7%97%D7%A1_%D7%95%D7%91%D7%A0%D7%99%D7%95_%D7%A2%D7%9D_%D7%94%D7%A4%D7%A1%D7%A0%D7%AA%D7%A8%D7%9F_%D7%92%D7%99%D7%90_%D7%9E%D7%99%D7%A0%D7%98%D7%95%D7%A1?id=91396",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "ILS"
+      }
+    },
+    {"@type": "MusicAlbum", "name": "מטאפורות זולות על אהבה", "byArtist": {"@id": "https://oferpinhas.com/#person"}, "url": "https://oferpinhas.bandcamp.com/album/-", "datePublished": "2014"},
+    {"@type": "MusicAlbum", "name": "מדובר באלבום", "byArtist": {"@id": "https://oferpinhas.com/#person"}, "url": "https://oferpinhas.bandcamp.com/album/about-an-album", "datePublished": "2018"},
+    {"@type": "MusicAlbum", "name": "מה יהיה עלינו", "byArtist": {"@id": "https://oferpinhas.com/#person"}, "url": "https://oferpinhas.bandcamp.com/album/--3", "datePublished": "2024"},
+    {"@type": "MusicAlbum", "name": "Enlightened Octopus", "byArtist": {"@id": "https://oferpinhas.com/#person"}, "url": "https://oferpinhas.bandcamp.com/album/enlightened-octopus", "datePublished": "2025"},
+    {"@type": "MusicAlbum", "name": "פנחס ובניו עם שלמה גרוניך — לייב בבארבי", "byArtist": {"@id": "https://oferpinhas.com/#person"}, "url": "https://open.spotify.com/album/0O7ljC8aYH2JIt3uw0OlNS", "datePublished": "2020"},
+    {"@type": "Book", "name": "כן זה חסר סיכוי, אבל למה לא לנסות", "author": {"@id": "https://oferpinhas.com/#person"}, "url": "https://oferpinhas.bandcamp.com/merch/sheet-music-booklet", "datePublished": "2019"}
   ]
 }
 </script>
@@ -62,6 +107,7 @@
 </header>
 
 <section class="hero" aria-label="עופר פנחס">
+  <h1 class="sr-only">עופר פנחס · מלחין, מעבד ומנהל מוזיקלי</h1>
   <p class="hero-subtitle">מלחין, מעבד ומנהל מוזיקלי</p>
 </section>
 
@@ -93,7 +139,7 @@
 
     <div class="featured-grid">
 
-      <button type="button" class="feature-card span-wide media-trigger" data-vid="5VMmquTxUQ4" data-title="יש לי סימפטיה — עם שלמה גרוניך" style="background-image:url('https://img.youtube.com/vi/5VMmquTxUQ4/maxresdefault.jpg')">
+      <button type="button" class="feature-card media-trigger" data-vid="5VMmquTxUQ4" data-title="יש לי סימפטיה — עם שלמה גרוניך" style="background-image:url('https://img.youtube.com/vi/5VMmquTxUQ4/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
           <span class="feature-tag">עם שלמה גרוניך</span>
@@ -123,7 +169,7 @@
         </span>
       </button>
 
-      <button type="button" class="feature-card media-trigger" data-vid="8IHO_f7Qg9U" data-title="30 מקומות להיות בהם לפני שאתה מת" style="background-image:url('https://img.youtube.com/vi/8IHO_f7Qg9U/maxresdefault.jpg')">
+      <button type="button" class="feature-card span-large media-trigger" data-vid="8IHO_f7Qg9U" data-title="30 מקומות להיות בהם לפני שאתה מת" style="background-image:url('https://img.youtube.com/vi/8IHO_f7Qg9U/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
           <span class="feature-title">30 מקומות להיות בהם לפני שאתה מת</span>
@@ -145,7 +191,7 @@
       <button type="button" class="feature-card span-wide media-trigger" data-vid="oE0PiF970mY" data-title="מי בעד — טריילר" style="background-image:url('https://img.youtube.com/vi/oE0PiF970mY/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2025 · תיאטרון הקאמרי</span>
+          <span class="feature-tag">תיאטרון הקאמרי</span>
           <span class="feature-title">מי בעד</span>
           <span class="feature-note">מוזיקה מקורית להצגה בתיאטרון הקאמרי, תל אביב.</span>
         </span>
@@ -154,7 +200,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="hSfi9_FQAlI" data-title="העיקר זה המילים — תזמורת המהפכה" style="background-image:url('https://img.youtube.com/vi/hSfi9_FQAlI/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2025 · תזמורת המהפכה</span>
+          <span class="feature-tag">תזמורת המהפכה</span>
           <span class="feature-title">העיקר זה המילים</span>
           <span class="feature-note">עיבודים תזמורתיים ליצירותיו של יוני רכטר.</span>
         </span>
@@ -163,7 +209,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="jJCnd9ooUhY" data-title="התקווה מתה אחרונה" style="background-image:url('https://img.youtube.com/vi/jJCnd9ooUhY/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2024 · אנסמבל מיתר</span>
+          <span class="feature-tag">אנסמבל מיתר</span>
           <span class="feature-title">התקווה מתה אחרונה</span>
           <span class="feature-note">מיזם רב-תחומי המבוסס על עדויות מ־7 באוקטובר.</span>
         </span>
@@ -172,7 +218,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="mZWnXQC3HQU" data-title="(How do I Get a) Visa to Germany — Live at Beethovenfest" style="background-image:url('https://img.youtube.com/vi/mZWnXQC3HQU/hqdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2023 · oneMusic Orchestra · Beethovenfest</span>
+          <span class="feature-tag">oneMusic Orchestra · Beethovenfest</span>
           <span class="feature-title">(How do I Get a) Visa to Germany</span>
           <span class="feature-note">יצירה רפסודית רב-תרבותית לאנסמבל קאמרי.</span>
         </span>
@@ -181,7 +227,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="vP4q-8lNHV0" data-title="אוונגרד תימני" style="background-image:url('https://img.youtube.com/vi/vP4q-8lNHV0/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2023 · אנסמבל מיתר × יוסי צברי</span>
+          <span class="feature-tag">אנסמבל מיתר × יוסי צברי</span>
           <span class="feature-title">אוונגרד תימני</span>
           <span class="feature-note">מחזור ספוקן-וורד סאטירי-פוליטי.</span>
         </span>
@@ -190,7 +236,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="PNPaJv0tdYc" data-title="שירים (לא) פשוטים" style="background-image:url('https://img.youtube.com/vi/PNPaJv0tdYc/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2023 · ניהול מוזיקלי · עיבודים</span>
+          <span class="feature-tag">ניהול מוזיקלי · עיבודים</span>
           <span class="feature-title">שירים (לא) פשוטים</span>
           <span class="feature-note">מופע מחווה שמעניק פרשנות אמנותית מודרנית לקלאסיקות עבריות.</span>
         </span>
@@ -199,7 +245,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="TAqMgQp6LPs" data-title="פוגה קטנה — רועי לבס" style="background-image:url('https://img.youtube.com/vi/TAqMgQp6LPs/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2022 · רועי לבס</span>
+          <span class="feature-tag">רועי לבס</span>
           <span class="feature-title">פוגה קטנה</span>
           <span class="feature-note">הלחנה והפקה.</span>
         </span>
@@ -224,7 +270,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="_PP_2U4opSM" data-title="Orphaned Land — בהיכל התרבות" style="background-image:url('https://img.youtube.com/vi/_PP_2U4opSM/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2021 · Orphaned Land · היכל התרבות</span>
+          <span class="feature-tag">Orphaned Land · היכל התרבות</span>
           <span class="feature-title">אורפנד לנד בהיכל התרבות</span>
           <span class="feature-note">עיבודים לתזמורת ומקהלה למופע יום השנה ה־30.</span>
         </span>

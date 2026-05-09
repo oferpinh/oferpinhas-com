@@ -9,9 +9,15 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="description" content="Ofer Pinhas — composer, arranger, musical director. Pinhas & Sons, projects, works and recordings.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ofer Pinhas">
+<meta property="og:title" content="Ofer Pinhas — Composer, Arranger, Musical Director">
 <meta property="og:description" content="Composer, arranger, musical director. Pinhas & Sons and other projects.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://oferpinhas.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://oferpinhas.com/en/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://oferpinhas.com/assets/og.jpg">
 <link rel="alternate" hreflang="he-IL" href="https://oferpinhas.com/">
 <link rel="alternate" hreflang="en" href="https://oferpinhas.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://oferpinhas.com/">
@@ -23,18 +29,51 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ofer Pinhas",
-  "alternateName": "עופר פנחס",
-  "url": "https://oferpinhas.com/",
-  "jobTitle": "Composer, arranger, musical director",
-  "sameAs": [
-    "https://pinhasons.com/",
-    "https://open.spotify.com/artist/4is8ZJ8ZOKavbLhc9M5EPt",
-    "https://oferpinhas.bandcamp.com/",
-    "https://www.youtube.com/@oferpinhas",
-    "https://www.instagram.com/ofer_the_pinhas/",
-    "https://www.facebook.com/ofer.pinhas"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://oferpinhas.com/#person",
+      "name": "Ofer Pinhas",
+      "alternateName": "עופר פנחס",
+      "url": "https://oferpinhas.com/",
+      "image": "https://oferpinhas.com/assets/og.jpg",
+      "jobTitle": "Composer, arranger, musical director",
+      "sameAs": [
+        "https://pinhasons.com/",
+        "https://open.spotify.com/artist/4is8ZJ8ZOKavbLhc9M5EPt",
+        "https://oferpinhas.bandcamp.com/",
+        "https://www.youtube.com/@oferpinhas",
+        "https://www.instagram.com/ofer_the_pinhas/",
+        "https://www.facebook.com/ofer.pinhas"
+      ]
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Head to Head — Pinhas & Sons with Guy Mintus",
+      "startDate": "2026-07-08T20:00:00+03:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Tel Aviv Museum of Art — Recanati Auditorium",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 Sha'ul HaMelekh",
+          "addressLocality": "Tel Aviv",
+          "addressCountry": "IL"
+        }
+      },
+      "performer": [
+        {"@type": "MusicGroup", "name": "Pinhas & Sons"},
+        {"@type": "Person", "name": "Guy Mintus"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://tickets.tamuseum.org.il/%D7%A4%D7%A0%D7%97%D7%A1_%D7%95%D7%91%D7%A0%D7%99%D7%95_%D7%A2%D7%9D_%D7%94%D7%A4%D7%A1%D7%A0%D7%AA%D7%A8%D7%9F_%D7%92%D7%99%D7%90_%D7%9E%D7%99%D7%A0%D7%98%D7%95%D7%A1?id=91396",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "ILS"
+      }
+    }
   ]
 }
 </script>
@@ -62,6 +101,7 @@
 </header>
 
 <section class="hero" aria-label="Ofer Pinhas">
+  <h1 class="sr-only">Ofer Pinhas — Composer, Arranger, Musical Director</h1>
   <p class="hero-subtitle">Composer, Arranger &amp; Musical Director</p>
 </section>
 
@@ -93,7 +133,7 @@
 
     <div class="featured-grid">
 
-      <button type="button" class="feature-card span-wide media-trigger" data-vid="5VMmquTxUQ4" data-title="I Have Sympathy — with Shlomo Gronich" style="background-image:url('https://img.youtube.com/vi/5VMmquTxUQ4/maxresdefault.jpg')">
+      <button type="button" class="feature-card media-trigger" data-vid="5VMmquTxUQ4" data-title="I Have Sympathy — with Shlomo Gronich" style="background-image:url('https://img.youtube.com/vi/5VMmquTxUQ4/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
           <span class="feature-tag">with Shlomo Gronich</span>
@@ -123,7 +163,7 @@
         </span>
       </button>
 
-      <button type="button" class="feature-card media-trigger" data-vid="8IHO_f7Qg9U" data-title="30 Places to Visit Before You Die" style="background-image:url('https://img.youtube.com/vi/8IHO_f7Qg9U/maxresdefault.jpg')">
+      <button type="button" class="feature-card span-large media-trigger" data-vid="8IHO_f7Qg9U" data-title="30 Places to Visit Before You Die" style="background-image:url('https://img.youtube.com/vi/8IHO_f7Qg9U/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
           <span class="feature-title italic-en">30 Places to Visit Before You Die</span>
@@ -145,7 +185,7 @@
       <button type="button" class="feature-card span-wide media-trigger" data-vid="oE0PiF970mY" data-title="All In Favor — trailer" style="background-image:url('https://img.youtube.com/vi/oE0PiF970mY/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2025 · The Cameri Theatre</span>
+          <span class="feature-tag">The Cameri Theatre</span>
           <span class="feature-title italic-en">All In Favor</span>
           <span class="feature-note">Original score for the Cameri Theatre, Tel Aviv.</span>
         </span>
@@ -154,7 +194,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="hSfi9_FQAlI" data-title="The Main Thing Is the Lyrics — Revolution Orchestra" style="background-image:url('https://img.youtube.com/vi/hSfi9_FQAlI/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2025 · Revolution Orchestra</span>
+          <span class="feature-tag">Revolution Orchestra</span>
           <span class="feature-title italic-en">The Main Thing Is the Lyrics</span>
           <span class="feature-note">Orchestral re-imaginings of Yoni Rechter.</span>
         </span>
@@ -163,7 +203,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="jJCnd9ooUhY" data-title="Hope Dies Last" style="background-image:url('https://img.youtube.com/vi/jJCnd9ooUhY/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2024 · Ensemble Meitar</span>
+          <span class="feature-tag">Ensemble Meitar</span>
           <span class="feature-title italic-en">Hope Dies Last</span>
           <span class="feature-note">Multidisciplinary work on testimonies from October 7th.</span>
         </span>
@@ -172,7 +212,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="mZWnXQC3HQU" data-title="(How do I Get a) Visa to Germany — Live at Beethovenfest" style="background-image:url('https://img.youtube.com/vi/mZWnXQC3HQU/hqdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2023 · oneMusic Orchestra · Beethovenfest</span>
+          <span class="feature-tag">oneMusic Orchestra · Beethovenfest</span>
           <span class="feature-title italic-en">(How do I Get a) Visa to Germany</span>
           <span class="feature-note">A multi-cultural rhapsodic work for chamber ensemble.</span>
         </span>
@@ -181,7 +221,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="vP4q-8lNHV0" data-title="Yemeni Avant-Garde" style="background-image:url('https://img.youtube.com/vi/vP4q-8lNHV0/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2023 · Ensemble Meitar × Yossi Tsabari</span>
+          <span class="feature-tag">Ensemble Meitar × Yossi Tsabari</span>
           <span class="feature-title italic-en">Yemeni Avant-Garde</span>
           <span class="feature-note">A satiric-political spoken-word cycle.</span>
         </span>
@@ -190,7 +230,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="PNPaJv0tdYc" data-title="(Not So) Simple Songs" style="background-image:url('https://img.youtube.com/vi/PNPaJv0tdYc/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2023 · Musical direction · arrangements</span>
+          <span class="feature-tag">Musical direction · arrangements</span>
           <span class="feature-title italic-en">(Not So) Simple Songs</span>
           <span class="feature-note">A tribute show offering bold, modern re-readings of Hebrew classics.</span>
         </span>
@@ -199,7 +239,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="TAqMgQp6LPs" data-title="Little Fugue — Roi Levas" style="background-image:url('https://img.youtube.com/vi/TAqMgQp6LPs/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2022 · Roi Levas</span>
+          <span class="feature-tag">Roi Levas</span>
           <span class="feature-title italic-en">Little Fugue</span>
           <span class="feature-note">Composition and production.</span>
         </span>
@@ -224,7 +264,7 @@
       <button type="button" class="feature-card media-trigger" data-vid="_PP_2U4opSM" data-title="Orphaned Land at Heichal HaTarbut" style="background-image:url('https://img.youtube.com/vi/_PP_2U4opSM/maxresdefault.jpg')">
         <span class="play-cue" aria-hidden="true">▶</span>
         <span class="feature-overlay">
-          <span class="feature-tag">2021 · Orphaned Land · Heichal HaTarbut</span>
+          <span class="feature-tag">Orphaned Land · Heichal HaTarbut</span>
           <span class="feature-title italic-en">Orphaned Land at Heichal HaTarbut</span>
           <span class="feature-note">Orchestra and choir arrangements for the band's 30-year anniversary concert.</span>
         </span>
