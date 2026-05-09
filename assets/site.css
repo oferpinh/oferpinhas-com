@@ -250,16 +250,24 @@ section { padding: 7rem 2rem; }
 .section-header .section-title { margin: 0; }
 .section-cta {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--saffron);
-  border-bottom: 1px solid var(--saffron);
-  padding-bottom: 3px;
-  transition: color .2s ease, border-color .2s ease;
+  color: var(--bg-deep);
+  background: var(--saffron);
+  padding: 0.75rem 1.4rem;
+  border: 2px solid var(--saffron);
+  display: inline-flex;
+  align-items: center;
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
 }
-.section-cta:hover { color: var(--ink); border-color: var(--ink); }
+.section-cta:hover {
+  background: transparent;
+  color: var(--saffron);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245,178,58,0.25);
+}
 
 .featured-grid {
   display: grid;
