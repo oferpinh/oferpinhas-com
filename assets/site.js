@@ -1,11 +1,21 @@
 (function () {
-  // Header scroll state
+  // Header scroll state — rAF-throttled to avoid forced reflow
   const header = document.querySelector('.site-header');
   if (header) {
-    const onScroll = () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
+    let ticking = false;
+    let lastY = window.scrollY;
+    const update = () => {
+      header.classList.toggle('scrolled', lastY > 40);
+      ticking = false;
     };
-    onScroll();
+    const onScroll = () => {
+      lastY = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+    update();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
