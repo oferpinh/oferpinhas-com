@@ -382,11 +382,11 @@ section { padding: 7rem 2rem; }
 .feature-card .feature-note {
   font-family: 'Karantina', 'Frank Ruhl Libre', serif;
   font-weight: 300;
-  font-size: 1.25rem;
-  letter-spacing: 0.04em;
-  word-spacing: 0.08em;
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  word-spacing: 0.14em;
   color: rgba(255,255,255,0.92);
-  line-height: 1.45;
+  line-height: 1.6;
   text-shadow: 0 1px 8px rgba(0,0,0,0.55);
   max-width: 36rem;
 }
