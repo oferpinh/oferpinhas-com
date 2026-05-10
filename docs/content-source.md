@@ -210,7 +210,7 @@ Sort: newest first. Marked `featured: true` ride the top of the grid.
 
 ## Contact
 
-- **Email**: `ofer.pinhas@gmail.com` (confirmed by Ofer 2026-05-06)
+- **Email**: `pinhasymphony@gmail.com` (confirmed by Ofer 2026-05-06)
 - **Phone**: +972-52-542-3189 (CV lists it; site does not publish)
 - **Instagram**: https://www.instagram.com/ofer_the_pinhas/
 - **Facebook**: https://www.facebook.com/ofer.pinhas
