@@ -410,12 +410,16 @@ section { padding: 7rem 2rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  padding-inline-start: 0.3rem;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: transform .25s cubic-bezier(.2,.8,.2,1), background .25s ease;
   z-index: 2;
+}
+.play-cue svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  transform: translateX(2px);
 }
 .feature-card:hover .play-cue {
   transform: translate(-50%, -50%) scale(1.1);
