@@ -279,12 +279,15 @@ section { padding: 7rem 2rem; }
   padding: 1.75rem 1rem;
   position: relative;
   background-color: transparent;
-  background-position: center;
+  background-position: center 50%;
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-color .35s ease;
   overflow: hidden;
+  min-height: 11rem;
 }
+.project details > summary.bg-top { background-position: center 18%; }
+.project details > summary.bg-bottom { background-position: center 80%; }
 .project details > summary::-webkit-details-marker { display: none; }
 .project details > summary::before {
   /* Dark veil over poster bg so text legible */
