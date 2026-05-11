@@ -222,3 +222,33 @@ Site lived through major redesign mid-build. Plan above is the original arc; rea
 **Branches**: `main` is canonical. `design-a/b/c` preserved for design comparisons.
 
 **Pre-launch waiting on user**: T4.x formal-kit PDFs, T5.5 Vercel auto-deploy auth, T5.6 domain cutover after Wix transition.
+
+---
+
+## Status snapshot — 2026-05-11
+
+For new sessions, **read `docs/CONTEXT.md` first** — it's the one-page ramp-up.
+
+**Major changes since last snapshot:**
+
+- **Concertina #works restructure.** Replaced `#band` + `#featured` with single `#works` containing 9 expandable `<details>`/`<summary>` projects. Closed state: kicker + big Karantina title + tagline on dimmed thumbnail backdrop. Open state: existing `featured-grid` videos. Native HTML, animated via `interpolate-size` + `::details-content`. Branch `design-expandable` merged into main 2026-05-11.
+- **Section title** "פרויקטים נבחרים" / "Selected Projects" added at top of #works.
+- **Mobile UX:** open-section gets subtle saffron tint + start-side hairline rail + filled play-cue (vs outlined section arrow) for clear boundary.
+- **Per-project crops:** inline `background-position` overrides per summary (Mi Bead 30%, Hope Dies Last 35%, Yemeni 65%, Simple Songs 35%, Octopus 45%) so faces/key content shows.
+- **+8 videos added across sections:** Hope Dies Last (חן אלמוג, Liquid Sky), Yemeni (Pardon my English), Simple Songs (שיר ללא שם, הנה הנה), Octopus (Just The Same name fix, Nick Drake, RUSH), Main Thing (יום יפה name fix), Yemeni-card title (נזק אגבי).
+- **Email:** `ofer.pinhas@gmail.com` → `pinhasymphony@gmail.com`.
+- **Logo:** OP_v4 (key-out black + tight crop) → variants regenerated.
+- **GitHub→Vercel auto-deploy LIVE** (2026-05-10). Push to main → deploys ~30s. T5.5 done.
+- **Lighthouse baseline captured + acted on.** Mobile Perf 68→80, LCP 10.9s→4.3s. Image bytes 2.45MB→600KB via WebP + tighter q. Font weight trim. T5.3 done.
+
+**Updated phase status:**
+- Phase 0 — ✅
+- Phase 1 — ✅
+- Phase 2 — ✅
+- Phase 3 — partial. T3.1/T3.2 (detail pages) **explicitly skipped per user**. T3.3 (filter) deleted as task — supplanted by concertina sections.
+- Phase 4 — T4.1/T4.2/T4.3/T4.4 **all marked deleted** per user (no need at this time). T4.5 og:image done.
+- Phase 5 — T5.1/T5.4/T5.5/T5.7 done. T5.3 done. T5.6 (domain) waiting on Wix cutover.
+
+**Only outstanding task:** T5.6 attach `oferpinhas.com`.
+
+**Pre-launch waiting on user**: domain cutover only.
