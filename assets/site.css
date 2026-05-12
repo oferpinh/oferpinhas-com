@@ -976,11 +976,28 @@ body.lightbox-open { overflow: hidden; }
   display: block;
 }
 .contact-icon:hover {
-  color: var(--bg-deep);
-  background: var(--saffron);
-  border-color: var(--saffron);
+  color: #fff;
   transform: translateY(-3px) scale(1.05);
 }
+
+/* Per-platform brand colors */
+.contact-icon--email   { color: color-mix(in srgb, #B8B4A8 70%, #F5B23A); border-color: color-mix(in srgb, var(--rule) 60%, #F5B23A); }
+.contact-icon--email:hover   { background: #F5B23A; border-color: #F5B23A; color: var(--bg-deep); }
+
+.contact-icon--instagram { color: color-mix(in srgb, #B8B4A8 60%, #E1306C); border-color: color-mix(in srgb, var(--rule) 55%, #E1306C); }
+.contact-icon--instagram:hover { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); border-color: #DD2A7B; }
+
+.contact-icon--facebook { color: color-mix(in srgb, #B8B4A8 60%, #1877F2); border-color: color-mix(in srgb, var(--rule) 55%, #1877F2); }
+.contact-icon--facebook:hover { background: #1877F2; border-color: #1877F2; }
+
+.contact-icon--youtube  { color: color-mix(in srgb, #B8B4A8 55%, #FF0000); border-color: color-mix(in srgb, var(--rule) 50%, #FF0000); }
+.contact-icon--youtube:hover  { background: #FF0000; border-color: #FF0000; }
+
+.contact-icon--bandcamp { color: color-mix(in srgb, #B8B4A8 60%, #1DA0C3); border-color: color-mix(in srgb, var(--rule) 55%, #1DA0C3); }
+.contact-icon--bandcamp:hover { background: #1DA0C3; border-color: #1DA0C3; }
+
+.contact-icon--spotify  { color: color-mix(in srgb, #B8B4A8 55%, #1DB954); border-color: color-mix(in srgb, var(--rule) 50%, #1DB954); }
+.contact-icon--spotify:hover  { background: #1DB954; border-color: #1DB954; }
 
 /* ─── Footer ─── */
 .site-footer {
